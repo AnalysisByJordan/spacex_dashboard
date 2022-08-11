@@ -230,8 +230,8 @@ app = dash.Dash(__name__)
 server = app.server
 app.layout = html.Div(className = 'main-div', children = [
     html.H1('SpaceX Dashboard', style = {'textAlign': 'center'}),
-    dbc.Tabs(children = [
-        dbc.Tab(label='General Metrics', children=[    
+    dcc.Tabs(children = [
+        dcc.Tab(label='General Metrics', children=[    
             html.Div([
                 html.Div([
                     html.Div([
@@ -251,7 +251,7 @@ app.layout = html.Div(className = 'main-div', children = [
                         html.Div(dcc.Graph(figure = fig3), className = 'small_graph'),
                         html.Div(dcc.Graph(figure = fig0), className = 'small_graph'), 
                         html.Div(className = 'manu_dropdown', children = [
-                            dbc.Label("Choose a Manufacturer", html_for = "orbit_manu_dd"),
+                            html.Label("Choose a Manufacturer"),
                             dcc.Dropdown(
                                 options = [{'label': k, 'value': k} for k in manufacturers], id = 'orbit_manu_dd', value = 'SpaceX')
                         ]),
@@ -263,15 +263,15 @@ app.layout = html.Div(className = 'main-div', children = [
             html.Div(className = 'video-page', children = [
                 html.Div(className = 'selection_row', children = [
                     html.Div(className = 'selection-box', children = [
-                        html.H2("Mission Selection"),
+                        html.H2("Mission Selection", className = 'mission'),
                         html.Div(className = "mission_selection", children = [
                             html.Div(className = 'launch_year_dropdown', children = [
-                                dbc.Label("Choose a Launch Year", html_for = "launches_years"), 
+                                html.Label("Choose a Launch Year", className = 'mission'), 
                                 dcc.Dropdown(className = 'video-dropdown', id='launches_years', options=[{'label': k, 'value': k} for k in video_dict.keys()], value = '2016'),
                             ]),
                             html.Div(className = 'middle-space'),
                             html.Div(className = 'mission_dropdown', children = [
-                                dbc.Label("Choose a Mission", html_for = "missions"), 
+                                html.Label("Choose a Mission", className = 'mission'), 
                                 dcc.Dropdown(className = 'video-dropdown', id = 'missions', value = 'SES-9')
                             ]),
                         ])
