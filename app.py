@@ -226,7 +226,7 @@ for item in manufacturers:
 important_df = important_df.astype(str)
 
 #App Construction-----------------------------------------------------------------------------------
-app = dash.Dash(external_stylesheets=[dbc.themes.CYBORG])
+app = dash.Dash(__name__)
 server = app.server
 app.layout = html.Div(className = 'main-div', children = [
     html.H1('SpaceX Dashboard', style = {'textAlign': 'center'}),
