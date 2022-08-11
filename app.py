@@ -397,5 +397,5 @@ def missionDetail(mission_value, year_value):
     return "{}".format(tentativeVar), "{}".format(successVar), "{}".format(failReasonVar), "{}".format(intentVar), "{}".format(landSucVar), "{}".format(landTypeVar), "{}".format(landVehVar), "{}".format(nationVar), "{}".format(manuVar), "{}".format(payIdVar), "{}".format(payTypeVar), "{}".format(payMassVar), "{}".format(referenceVar),
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
 
